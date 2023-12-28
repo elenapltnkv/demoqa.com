@@ -1,0 +1,37 @@
+plugins {
+    id("java-library")
+}
+
+group = "elenapltnkv"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+dependencies {
+    testImplementation (
+            "com.codeborne:selenide:7.0.4",
+            "org.junit.jupiter:junit-jupiter:5.10.0"
+    )
+
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+help {
+    doFirst {
+        println ""
+        println "************************************************************************ "
+        println "***                                                                  *** "
+        println "*** Welcome!            *** "
+        println "***                                                                  *** "
+        println "*** ./gradlew help                                                   *** "
+        println "***                                                                  *** "
+        println "************************************************************************ "
+        println ""
+    }
+}
