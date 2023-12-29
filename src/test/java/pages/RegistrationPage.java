@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.github.javafaker.Faker;
 import pages.components.CalendarComponent;
 import pages.components.RegistrationModalResult;
 
@@ -60,24 +61,29 @@ public class RegistrationPage {
         component.setDate(day, month, year);
         return this;
     }
+
     public RegistrationPage setHobby(String value) {
         $("#hobbiesWrapper").$(byText(value)).click();
         return this;
     }
+
     public RegistrationPage currentAddress(String value) {
         currentAddress.setValue(value);
         return this;
     }
+
     public RegistrationPage getState() {
         $("#state").click();
         $("#react-select-3-option-1").click();
         $("#submit").click();
         return this;
     }
+
     public RegistrationPage getRegistrationModal() {
         modalResult.verifyModal();
         return this;
     }
+
     public RegistrationPage getverifyResult(String key, String value) {
         modalResult.veryfyResultText(key, value);
         return this;

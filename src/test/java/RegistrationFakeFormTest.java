@@ -1,5 +1,9 @@
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
+
+import static utils.RandomUtils.*;
+
 
 public class RegistrationFakeFormTest extends Basic {
 
@@ -7,22 +11,22 @@ public class RegistrationFakeFormTest extends Basic {
     @Test
     public void addStudentNameTest() {
         registrationPage.openPage()
-                .setFirstName("Heyery")
-                .setLastName("ehrgfef")
-                .setUserEmail("hsfdhsf@ya.ru")
+                .setFirstName(userName)
+                .setLastName(userSurname)
+                .setUserEmail(userFakeEmail)
                 .getGender("Female")
-                .setUserNumber("79971235228")
+                .setUserNumber(phoneFakeNumber)
                 .getDateOfBirth("16", "June", "1985")
                 .setHobby("Reading")
-                .currentAddress("15 Seryur Angfef")
+                .currentAddress(userAddress)
                 .getState()
                 .getRegistrationModal()
-                .getverifyResult("Student Name", "Heyery ehrgfef")
-                .getverifyResult("Student Email", "hsfdhsf@ya.ru")
+                .getverifyResult("Student Name", userName+" "+ userSurname)
+                .getverifyResult("Student Email", userFakeEmail)
                 .getverifyResult("Gender", "Female")
                 .getverifyResult("Date of Birth", "16 June,1985")
                 .getverifyResult("Hobbies", "Reading")
-                .getverifyResult("Address", "15 Seryur Angfef");
+                .getverifyResult("Address", userAddress);
 
     }
 
