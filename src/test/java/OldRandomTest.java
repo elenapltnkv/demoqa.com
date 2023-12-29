@@ -1,25 +1,18 @@
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import utils.RandomUtils;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static utils.RandomUtils.randomString;
 
-
-public class OldTest extends Basic{
-
-RandomUtils utils = new RandomUtils();
+public class OldRandomTest extends Basic{
     @Test
     public void addStudentNameTest() {
         open("/automation-practice-form");
-         $("#firstName").setValue(randomString(8));
-        $("#lastName").setValue(randomString(10));
-        $("#userEmail").setValue(randomString(5)+"@ya.ru");
+        $("#firstName").setValue("Bsttere");
+        $("#lastName").setValue("Tjdhjrg");
+        $("#userEmail").setValue("hsfdhsf@ya.ru");
         $("#genterWrapper").$(byText("Female")).click();
         $("#userNumber").setValue("79971235228");
         $("#dateOfBirthInput").click();
